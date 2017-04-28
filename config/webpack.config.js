@@ -9,8 +9,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-const env = process.env.MEIYA_ENV;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -68,12 +67,17 @@ module.exports = {
             },
             {
                 test: /\.(jpe?g|gif|png|svg)$/i,
-                use: `file-loader?name=${env ? '' : '/dist/'}img/[name].[ext]`,
+                use: 'file-loader?name=img/[name].[ext]',
             },
         ],
     },
     plugins: [
         new webpack.optimize.UglifyJsPlugin(),
+        new CopyWebpackPlugin([
+            {
+                from: 'node_modules/normalize.css/normalize.css',
+            },
+        ]),
         new ExtractTextPlugin('[name].min.css'),
     ],
 };

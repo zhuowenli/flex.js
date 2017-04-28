@@ -5,7 +5,8 @@
   "main": "flex.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --watch --config config/webpack.config.js"
+    "serve": "serve",
+    "dev": "webpack --watch --config config/webpack.config.js & npm run serve"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "babel-eslint": "^7.2.3",
     "babel-loader": "^6.4.1",
     "babel-preset-env": "^1.4.0",
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.1.3",
@@ -35,5 +37,8 @@
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
     "webpack": "^2.4.1"
+  },
+  "dependencies": {
+    "normalize.css": "^6.0.0"
   }
 }

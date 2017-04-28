@@ -6,6 +6,9 @@ env:
 
 parser: 'babel-eslint'
 
+globals:
+  $: true
+
 extends:
   - airbnb-base
 
