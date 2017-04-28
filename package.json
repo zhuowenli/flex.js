@@ -4,7 +4,8 @@
   "description": "移动端配适解决方案",
   "main": "flex.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --watch --config config/webpack.config.js"
   },
   "repository": {
     "type": "git",

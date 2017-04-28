@@ -14,8 +14,8 @@ const env = process.env.MEIYA_ENV;
 
 module.exports = {
     entry: {
-        flex: '../flex.js',
-        app: '../example/app.js',
+        flex: './flex.js',
+        app: './example/app.js',
     },
     output: {
         filename: '[name].min.js',
