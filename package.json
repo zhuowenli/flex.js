@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "serve",
     "dev": "webpack --watch --config config/webpack.config.js & npm run serve",
-    "build": "webpack --config config/webpack.config.js",
+    "build": "webpack --config config/webpack.config.js && cp ./dist/flex.min.js ./flex.min.js",
     "predeploy": "mkdir -p deploy && cp -R dist index.html deploy",
     "deploy": "gh-pages -d deploy"
   },

@@ -4,8 +4,9 @@
  * @export
  * @param {number} [baseFontSize=100] 基础fontSize, 默认100px;
  * @param {number} [fontscale=1] 有的业务希望能放大一定比例的字体;
+ * @param {number} [baseDpr=2] 设计稿默认dpr;
  */
-export default function flex(baseFontSize = 100, fontscale = 1) {
+export default function flex(baseFontSize = 100, fontscale = 1, baseDpr = 2) {
     const doc = window.document;
     const ua = navigator.userAgent;
     const matches = ua.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i);
@@ -31,7 +32,7 @@ export default function flex(baseFontSize = 100, fontscale = 1) {
 
     metaEl.setAttribute('content', `width=device-width,user-scalable=no,initial-scale=${scale},maximum-scale=${scale},minimum-scale=${scale}`);
 
-    doc.documentElement.style.fontSize = `${(baseFontSize / 2) * dpr * fontscale}px`;
+    doc.documentElement.style.fontSize = `${(baseFontSize / baseDpr) * dpr * fontscale}px`;
 }
 
 window.flex = flex;
